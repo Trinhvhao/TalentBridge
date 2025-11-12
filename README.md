@@ -102,23 +102,27 @@ Sử dụng sức mạnh của **Google Gemini AI** và **Semantic Search**, Tal
 
 ### 🏠 Trang Chủ
 
-![Trang chủ TalentBridge](frontend\assets\imgs\screenshots\landing_page.png)
+![Trang chủ TalentBridge](frontend/assets/imgs/screenshots/landing_page.png)
 *Giao diện trang chủ thân thiện với người dùng*
 
 ---
 
 ### 📄 Upload & Phân Tích CV
 
-![Upload CV](frontend\assets\imgs\screenshots\cv_analysis.png)
+![Upload CV](frontend/assets/imgs/screenshots/cv_analysis.png)
 *Kéo thả file CV và xem kết quả phân tích tức thì*
 
 ---
+### 🤝 Gợi Ý Việc Làm (Job Matching)
+
+![Job Matching](frontend/assets/imgs/screenshots/job_matching.png)
+*AI gợi ý công việc phù hợp theo kỹ năng, kinh nghiệm & mục tiêu nghề nghiệp*
 
 ---
 
 ### 📊 Dashboard Analytics
 
-![Dashboard](frontend\assets\imgs\screenshots\dashboard.png)
+![Dashboard](frontend/assets/imgs/screenshots/dashboard.png)
 *Biểu đồ phân tích thị trường việc làm với AI insights*
 
 </div>
