@@ -1,0 +1,275 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+% Packages
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{algorithm}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{url}
+
+\usetikzlibrary{shapes.geometric, arrows, positioning, fit, backgrounds}
+\pgfplotsset{compat=1.17}
+
+% Define colors
+\definecolor{primaryblue}{RGB}{0,102,204}
+\definecolor{secondarygreen}{RGB}{76,175,80}
+\definecolor{accentorange}{RGB}{255,152,0}
+
+% TikZ styles
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=primaryblue!20, font=\small]
+\tikzstyle{database} = [cylinder, shape border rotate=90, aspect=0.25, minimum width=2cm, minimum height=1.2cm, text centered, draw=black, fill=secondarygreen!20, font=\small]
+\tikzstyle{decision} = [diamond, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=accentorange!20, font=\small]
+\tikzstyle{data} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=gray!20, font=\small]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{document}
+
+\title{TalentBridge Figures Test - RAG Workflow \& Fixed Diagrams}
+
+\author{\IEEEauthorblockN{Test Document}
+\IEEEauthorblockA{For reviewing updated figures}}
+
+\maketitle
+
+\section{Introduction}
+This document contains all updated figures for TalentBridge paper. Review each figure for clarity and correctness.
+
+\section{System Architecture}
+
+Figure~\ref{fig:architecture} shows the complete system architecture including the new RAG module.
+
+% FIXED FIGURE 1: System Architecture
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[node distance=2cm, scale=0.85, every node/.style={scale=0.85}]
+
+% ===== FRONTEND LAYER =====
+\node (frontend_label) [draw=none, fill=none, font=\bfseries] at (0, 0) {Frontend Layer};
+\node (frontend_box) [draw, thick, rounded corners, minimum width=14cm, minimum height=2.5cm, fill=primaryblue!10] at (0, -1.5) {};
+
+\node (index) [process, minimum width=2.8cm, minimum height=0.8cm] at (-5, -1.5) {Landing Page};
+\node (cvpage) [process, minimum width=2.8cm, minimum height=0.8cm] at (-2, -1.5) {CV Analysis};
+\node (jobpage) [process, minimum width=2.8cm, minimum height=0.8cm] at (1.5, -1.5) {Job Listing};
+\node (dashboard) [process, minimum width=2.8cm, minimum height=0.8cm] at (5, -1.5) {Dashboard};
+
+% ===== API LAYER =====
+\node (api_label) [draw=none, fill=none, font=\bfseries] at (0, -4) {API Layer (FastAPI)};
+\node (api_box) [draw, thick, rounded corners, minimum width=14cm, minimum height=2.5cm, fill=secondarygreen!10] at (0, -5.5) {};
+
+\node (upload) [process, minimum width=2.2cm, minimum height=0.7cm, fill=secondarygreen!30] at (-5.5, -5.5) {/upload-cv};
+\node (match) [process, minimum width=2.2cm, minimum height=0.7cm, fill=secondarygreen!30] at (-3, -5.5) {/match};
+\node (jobs) [process, minimum width=2.2cm, minimum height=0.7cm, fill=secondarygreen!30] at (-0.5, -5.5) {/jobs};
+\node (insights) [process, minimum width=2.2cm, minimum height=0.7cm, fill=secondarygreen!30] at (2, -5.5) {/insights};
+\node (analytics) [process, minimum width=2.2cm, minimum height=0.7cm, fill=secondarygreen!30] at (4.5, -5.5) {/analytics};
+
+% ===== PROCESSING LAYER =====
+\node (processing_label) [draw=none, fill=none, font=\bfseries] at (0, -7.5) {Processing Layer};
+
+% AI Module
+\node (ai_box) [draw, thick, rounded corners, minimum width=4cm, minimum height=3cm, fill=accentorange!10] at (-4.5, -9.5) {};
+\node (ai_label) [draw=none, fill=none, font=\small\bfseries] at (-4.5, -8.3) {AI Analysis};
+\node (gemini) [process, minimum width=3cm, minimum height=0.6cm, fill=accentorange!30, font=\small] at (-4.5, -9.2) {Gemini 2.5 Flash};
+\node (embedding) [process, minimum width=3cm, minimum height=0.6cm, fill=accentorange!30, font=\small] at (-4.5, -10.1) {text-embedding-004};
+
+% Vector Module
+\node (vector_box) [draw, thick, rounded corners, minimum width=4cm, minimum height=3cm, fill=secondarygreen!10] at (0, -9.5) {};
+\node (vector_label) [draw=none, fill=none, font=\small\bfseries] at (0, -8.3) {Vector Search};
+\node (chromadb) [database, minimum width=2.5cm, minimum height=1cm, font=\small] at (0, -9.7) {ChromaDB\\768-dim};
+
+% RAG Module (NEW)
+\node (rag_box) [draw, thick, rounded corners, minimum width=4cm, minimum height=3cm, fill=primaryblue!10] at (4.5, -9.5) {};
+\node (rag_label) [draw=none, fill=none, font=\small\bfseries] at (4.5, -8.3) {RAG Module};
+\node (rag_retrieval) [process, minimum width=3cm, minimum height=0.6cm, fill=primaryblue!30, font=\small] at (4.5, -9.2) {Retrieval};
+\node (rag_generation) [process, minimum width=3cm, minimum height=0.6cm, fill=primaryblue!30, font=\small] at (4.5, -10.1) {Generation};
+
+% ===== DATA LAYER =====
+\node (data_label) [draw=none, fill=none, font=\bfseries] at (0, -12) {Data Layer};
+\node (sqlite) [database, minimum width=3cm, minimum height=1.2cm] at (0, -13.2) {SQLite\\6 tables};
+
+% External API
+\node (google_api) [process, minimum width=2.5cm, minimum height=1cm, fill=yellow!30] at (-9, -9.5) {Google AI\\API};
+
+% ===== ARROWS =====
+% Frontend to API (logical connections)
+\draw [arrow] (cvpage) -- (upload);
+\draw [arrow] (cvpage) -- (match);
+\draw [arrow] (jobpage) -- (jobs);
+\draw [arrow] (jobpage) -- (insights);
+\draw [arrow] (dashboard) -- (analytics);
+
+% API to Processing (correct routing)
+\draw [arrow] (upload) -- (ai_box);
+\draw [arrow] (match) -- (vector_box);
+\draw [arrow] (insights) -- (rag_box);
+
+% Analytics goes around vector search box to avoid overlap
+\draw [arrow] (analytics) -- ++(0,-3) -| ++(2.5,0) |- (sqlite);
+
+% Processing to Data
+\draw [arrow] (ai_box) -- (sqlite);
+\draw [arrow] (vector_box) -- (chromadb);
+
+% External API connections
+\draw [arrow] (google_api) -- (gemini);
+\draw [arrow] (google_api) -- (embedding);
+
+% ChromaDB connections
+\draw [arrow] (chromadb) -- (rag_retrieval);
+\draw [arrow, dashed] (ai_box) -- (chromadb);
+
+\end{tikzpicture}
+\caption{TalentBridge System Architecture - Three-tier design with AI-powered backend and RAG module}
+\label{fig:architecture}
+\end{figure*}
+
+\section{CV Parsing Workflow}
+
+Figure~\ref{fig:cv_parsing_flow} illustrates the CV parsing process with LLM-based extraction.
+
+% FIXED FIGURE 2: CV Parsing Workflow
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=1.5cm, scale=0.75, every node/.style={scale=0.75}]
+
+% Main flow
+\node (pdf) [data, minimum width=3cm] {PDF File};
+\node (extract) [process, below of=pdf, minimum width=3cm] {Extract Text\\(PyPDF2)};
+\node (prompt) [process, below of=extract, minimum width=3cm] {Construct\\Prompt};
+\node (llm) [process, below of=prompt, minimum width=3cm, fill=accentorange!30] {Gemini 2.5\\Flash};
+\node (parse) [process, below of=llm, minimum width=3cm] {Parse JSON\\Response};
+\node (validate) [decision, below of=parse, yshift=-0.5cm, minimum width=2.5cm, aspect=2] {Valid?};
+\node (store) [database, below of=validate, yshift=-0.8cm, minimum width=2.5cm] {Store to\\SQLite};
+\node (index) [database, below of=store, yshift=-0.3cm, minimum width=2.5cm] {Index to\\ChromaDB};
+
+% Retry path - moved further right to avoid overlap
+\node (retry) [process, right of=validate, xshift=3.5cm, minimum width=2.8cm] {Retry with\\Different Key};
+
+% Arrows
+\draw [arrow] (pdf) -- (extract);
+\draw [arrow] (extract) -- node[anchor=west, font=\small] {raw text} (prompt);
+\draw [arrow] (prompt) -- (llm);
+\draw [arrow] (llm) -- node[anchor=west, font=\small] {JSON} (parse);
+\draw [arrow] (parse) -- (validate);
+\draw [arrow] (validate) -- node[anchor=west, font=\small] {Yes} (store);
+\draw [arrow] (validate) -- node[anchor=north, font=\small, yshift=2pt] {No} (retry);
+\draw [arrow] (retry) |- (llm);
+\draw [arrow] (store) -- (index);
+
+\end{tikzpicture}
+\caption{CV Parsing Workflow with LLM-based extraction and API key rotation}
+\label{fig:cv_parsing_flow}
+\end{figure}
+
+\section{Semantic Job Matching}
+
+Figure~\ref{fig:matching_flow} shows the semantic matching workflow with vector similarity.
+
+% FIXED FIGURE 3: Semantic Matching Workflow
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=1.5cm, scale=0.75, every node/.style={scale=0.75}]
+
+% Main flow
+\node (start) [data, minimum width=3cm] {CV Data};
+\node (embed) [process, below of=start, minimum width=3cm, fill=accentorange!30] {Generate\\Embedding};
+\node (query) [process, below of=embed, minimum width=3cm, fill=secondarygreen!30] {ChromaDB\\Query};
+\node (candidates) [data, below of=query, minimum width=3cm] {Top 50\\Candidates};
+\node (filter) [decision, below of=candidates, yshift=-0.5cm, minimum width=2.5cm, aspect=2] {Apply\\Filters?};
+\node (rank) [process, below of=filter, yshift=-0.8cm, minimum width=3cm, fill=primaryblue!30] {Gemini AI\\Ranking};
+\node (explain) [process, below of=rank, minimum width=3cm] {Generate\\Explanations};
+\node (result) [data, below of=explain, minimum width=3cm] {Top-k Jobs\\+ Scores};
+
+% Filter path
+\node (apply_filter) [process, right of=filter, xshift=3.5cm, minimum width=2.8cm] {Filter by\\Category/Location};
+
+% Arrows
+\draw [arrow] (start) -- (embed);
+\draw [arrow] (embed) -- node[anchor=west, font=\small] {768-dim} (query);
+\draw [arrow] (query) -- (candidates);
+\draw [arrow] (candidates) -- (filter);
+\draw [arrow] (filter) -- node[anchor=west, font=\small] {No} (rank);
+\draw [arrow] (filter) -- node[anchor=south, font=\small] {Yes} (apply_filter);
+\draw [arrow] (apply_filter) |- (rank);
+\draw [arrow] (rank) -- (explain);
+\draw [arrow] (explain) -- (result);
+
+\end{tikzpicture}
+\caption{Semantic Job Matching Workflow with vector similarity and AI ranking}
+\label{fig:matching_flow}
+\end{figure}
+
+\section{RAG Workflow}
+
+Figure~\ref{fig:rag_workflow} demonstrates the Retrieval-Augmented Generation pipeline for job insights.
+
+% NEW FIGURE 4: RAG Workflow
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=1.8cm, scale=0.7, every node/.style={scale=0.7}]
+
+% ===== INDEXING PIPELINE (TOP) =====
+\node (docs) [data, minimum width=2.8cm, minimum height=0.9cm] {Job Postings\\(3,237 docs)};
+\node (chunk) [process, below of=docs, minimum width=2.8cm] {Chunking\\(3 parts/job)};
+\node (embed_doc) [process, below of=chunk, minimum width=2.8cm, fill=accentorange!30] {Embedding\\(768-dim)};
+\node (vectordb) [database, below of=embed_doc, yshift=-0.3cm, minimum width=2.8cm] {ChromaDB\\Vector Store};
+
+% ===== QUERY PIPELINE (RIGHT) =====
+\node (user_query) [data, right of=docs, xshift=5cm, minimum width=2.8cm, minimum height=0.9cm] {User Query};
+\node (embed_query) [process, below of=user_query, minimum width=2.8cm, fill=accentorange!30] {Embed Query\\(768-dim)};
+\node (retrieve) [process, below of=embed_query, minimum width=2.8cm, fill=secondarygreen!30] {Similarity\\Search};
+\node (top_k) [data, below of=retrieve, minimum width=2.8cm, minimum height=0.9cm] {Top-5\\Contexts};
+
+% ===== GENERATION (BOTTOM) =====
+\node (llm) [process, below of=top_k, yshift=-0.5cm, minimum width=2.8cm, fill=primaryblue!30] {Gemini 2.5\\+ Context};
+\node (response) [data, below of=llm, minimum width=2.8cm, minimum height=0.9cm] {Grounded\\Response};
+
+% ===== ARROWS =====
+% Indexing flow - labels on the right side to avoid overlap
+\draw [arrow] (docs) -- node[anchor=west, font=\tiny, xshift=3pt] {raw docs} (chunk);
+\draw [arrow] (chunk) -- node[anchor=west, font=\tiny, xshift=3pt] {chunks} (embed_doc);
+\draw [arrow] (embed_doc) -- node[anchor=west, font=\tiny, xshift=3pt] {vectors} (vectordb);
+
+% Query flow - no labels to avoid clutter
+\draw [arrow] (user_query) -- (embed_query);
+\draw [arrow] (embed_query) -- (retrieve);
+
+% Vector DB to Retrieval - label on top to avoid overlap
+\draw [arrow] (vectordb) -- node[anchor=south, font=\tiny, yshift=2pt] {} (retrieve);
+
+% Retrieval to Context - label on right side
+\draw [arrow] (retrieve) -- node[anchor=west, font=\tiny, xshift=3pt] {top-5} (top_k);
+
+% Context + Query to LLM
+\draw [arrow] (top_k) -- (llm);
+\draw [arrow] (user_query) -- ++(0,-6.5) -| node[anchor=north, font=\tiny, pos=0.5] {query} (llm);
+
+% LLM to Response
+\draw [arrow] (llm) -- (response);
+
+\end{tikzpicture}
+\caption{RAG Workflow - Indexing pipeline (left) and query pipeline (right) for grounded job insights}
+\label{fig:rag_workflow}
+\end{figure}
+
+\section{Conclusion}
+
+All figures have been updated with:
+\begin{itemize}
+\item Better spacing and alignment
+\item Consistent color coding (AI=orange, Vector=green, RAG=blue)
+\item Clearer labels and annotations
+\item Proper node distances for readability
+\item New RAG module integrated into architecture
+\end{itemize}
+
+\end{document}
+
