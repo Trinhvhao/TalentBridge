@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="logo.png" alt="TalentBridge Logo" width="200" style="margin-bottom: 20px"/>
-
 # 🎯 TalentBridge
 
 ### *Nền Tảng Tìm Việc Thông Minh Cho Sinh Viên*
@@ -18,13 +16,6 @@
 
 **✨ Sử dụng AI để phân tích CV, gợi ý việc làm phù hợp và đánh giá chất lượng hồ sơ ✨**
 
-<p align="center">
-  <a href="#-demo"><strong>🚀 Demo</strong></a> •
-  <a href="#-tính-năng"><strong>✨ Tính Năng</strong></a> •
-  <a href="#-cài-đặt"><strong>📦 Cài Đặt</strong></a> •
-  <a href="#-tài-liệu"><strong>📖 Tài Liệu</strong></a> •
-  <a href="#-đóng-góp"><strong>🤝 Đóng Góp</strong></a>
-</p>
 
 ---
 
@@ -34,9 +25,20 @@
 
 <div align="center">
 
-| [Giới Thiệu](#-giới-thiệu) | [Tính Năng](#-tính-năng) | [Công Nghệ](#-công-nghệ) | [Kiến Trúc](#-kiến-trúc-hệ-thống) |
-|:--:|:--:|:--:|:--:|
-| [Cài Đặt](#-cài-đặt) | [Sử Dụng](#-sử-dụng) | [API Docs](#-api-documentation) | [Roadmap](#-roadmap) |
+| **Phần** | **Nội Dung** |
+|:--------:|:-----------|
+| 🎯 | [Giới Thiệu](#-giới-thiệu) - Tổng quan về TalentBridge |
+| 🚀 | [Demo](#-demo) - Screenshots giao diện |
+| ✨ | [Tính Năng Chính](#-tính-năng-chính) - 5 tính năng nổi bật |
+| 🛠️ | [Công Nghệ Sử Dụng](#️-công-nghệ-sử-dụng) - Tech stack & AI models |
+| 🏗️ | [Kiến Trúc Hệ Thống](#️-kiến-trúc-hệ-thống) - System architecture |
+| 📦 | [Cài Đặt](#-cài-đặt) - Hướng dẫn cài đặt từng bước |
+| 🚀 | [Sử Dụng](#-sử-dụng) - Hướng dẫn sử dụng |
+| 📖 | [API Documentation](#-api-documentation) - API endpoints |
+| 📚 | [Tài Liệu](#-tài-liệu) - Tài liệu kỹ thuật |
+| 🎓 | [Roadmap](#-roadmap) - Kế hoạch phát triển |
+| 🤝 | [Đóng Góp](#-đóng-góp) - Cách đóng góp cho project |
+| 📄 | [License](#-license) - Giấy phép MIT |
 
 </div>
 
@@ -59,7 +61,7 @@ Sử dụng sức mạnh của **Google Gemini AI** và **Semantic Search**, Tal
   <br/><sub>Upload PDF và AI sẽ đọc, hiểu toàn bộ nội dung</sub>
 </td>
 <td align="center" width="25%">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bullseye.png" width="60"/>
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Eye%20in%20Speech%20Bubble.png" alt="Eye in Speech Bubble" width="60" />
   <br/><strong>Gợi ý việc làm phù hợp</strong>
   <br/><sub>Tìm công việc match với kỹ năng và kinh nghiệm</sub>
 </td>
@@ -94,7 +96,36 @@ Sử dụng sức mạnh của **Google Gemini AI** và **Semantic Search**, Tal
 
 ---
 
-## ✨ Tính Năng
+## 🚀 Demo
+
+<div align="center">
+
+### 🏠 Trang Chủ
+
+![Trang chủ TalentBridge](frontend\assets\imgs\screenshots\landing_page.png)
+*Giao diện trang chủ thân thiện với người dùng*
+
+---
+
+### 📄 Upload & Phân Tích CV
+
+![Upload CV](frontend\assets\imgs\screenshots\cv_analysis.png)
+*Kéo thả file CV và xem kết quả phân tích tức thì*
+
+---
+
+---
+
+### 📊 Dashboard Analytics
+
+![Dashboard](frontend\assets\imgs\screenshots\dashboard.png)
+*Biểu đồ phân tích thị trường việc làm với AI insights*
+
+</div>
+
+---
+
+## ✨ Tính Năng Chính
 
 <details open>
 <summary><h3>🤖 1. Phân Tích CV Thông Minh</h3></summary>
@@ -115,9 +146,11 @@ graph LR
 
 </div>
 
-- **Upload PDF** - Kéo thả hoặc chọn file CV
-- **AI Parse** - Gemini AI tự động đọc và trích xuất thông tin
-- **Structured Data** - Chuyển đổi sang JSON với đầy đủ thông tin:
+**Quy trình tự động:**
+
+- **📤 Upload PDF** - Kéo thả hoặc chọn file CV
+- **🤖 AI Parse** - Gemini AI tự động đọc và trích xuất thông tin
+- **📊 Structured Data** - Chuyển đổi sang JSON với đầy đủ thông tin:
   - 👤 Thông tin cá nhân (tên, email, phone)
   - 💪 Kỹ năng (skills)
   - 🎓 Học vấn (education)
@@ -142,7 +175,7 @@ graph LR
 **Phân Tích Chi Tiết:**
 - ✅ **Điểm Mạnh** - Những gì bạn làm tốt
 - ⚠️ **Điểm Yếu** - Những gì cần cải thiện  
-- 💡 **Gợi Ý** - Lời khuyên cụ thể từ AI
+- 💡 **Gợi Ý** - Lời khuyên cụ thể từ AI để nâng cao chất lượng CV
 
 </details>
 
@@ -150,6 +183,8 @@ graph LR
 <summary><h3>🎯 3. Tìm Việc Phù Hợp (Semantic Matching)</h3></summary>
 
 <div align="center">
+
+**Công nghệ Semantic Search:**
 
 ```
 CV của bạn → [AI Embedding] → Vector 768 chiều
@@ -163,14 +198,16 @@ CV của bạn → [AI Embedding] → Vector 768 chiều
 
 </div>
 
-- **Semantic Search** - Tìm kiếm theo nghĩa với ChromaDB
-- **AI Ranking** - Gemini AI xếp hạng độ phù hợp (0-100%)
-- **Smart Filters:**
+**Tính năng nổi bật:**
+
+- **🔍 Semantic Search** - Tìm kiếm theo nghĩa với ChromaDB
+- **🎯 AI Ranking** - Gemini AI xếp hạng độ phù hợp (0-100%)
+- **🎛️ Smart Filters:**
   - 📍 Địa điểm (Hà Nội, HCM, Đà Nẵng...)
   - 💰 Mức lương (10-50 triệu)
   - 📅 Kinh nghiệm (0-5+ năm)
   - 💼 Loại công việc (Full-time, Part-time, Remote)
-- **Giải Thích AI** - "Tại sao công việc này phù hợp với bạn?"
+- **💬 Giải Thích AI** - "Tại sao công việc này phù hợp với bạn?"
 
 </details>
 
@@ -181,15 +218,16 @@ CV của bạn → [AI Embedding] → Vector 768 chiều
 
 **6 Biểu Đồ Thống Kê:**
 
-| 📊 Top Vị Trí | 🏢 Top Công Ty | 📍 Địa Điểm |
-|:------------:|:-------------:|:----------:|
-| 💼 Loại Công Việc | 📅 Kinh Nghiệm | 💰 Mức Lương |
+| 📊 Top Vị Trí | 🏢 Top Công Ty | 📍 Phân Bố Địa Điểm |
+|:------------:|:-------------:|:------------------:|
+| 💼 Loại Công Việc | 📅 Yêu Cầu Kinh Nghiệm | 💰 Phân Bổ Mức Lương |
 
 </div>
 
-- **AI Insights** - Phân tích xu hướng và gợi ý cho sinh viên
-- **Interactive Charts** - Chart.js với animation mượt mà
-- **Real-time Data** - Dữ liệu cập nhật từ database
+**Tính năng:**
+- **🤖 AI Insights** - Phân tích xu hướng và gợi ý cho sinh viên
+- **📊 Interactive Charts** - Chart.js với animation mượt mà
+- **⚡ Real-time Data** - Dữ liệu cập nhật từ database
 
 </details>
 
@@ -197,15 +235,15 @@ CV của bạn → [AI Embedding] → Vector 768 chiều
 <summary><h3>🔍 5. Tìm Kiếm & Lọc Việc Làm</h3></summary>
 
 - ✅ **3,237 Công Việc** thực tế từ TopCV
-- 🔍 **Tìm Kiếm Nâng Cao** - Theo từ khóa, địa điểm, lương
+- 🔍 **Tìm Kiếm Nâng Cao** - Theo từ khóa, địa điểm, mức lương
 - 📄 **Pagination** - 20 jobs/page
-- 🔀 **Sort** - Theo mới nhất, lương, deadline
+- 🔀 **Sort** - Theo mới nhất, lương cao, deadline
 
 </details>
 
 ---
 
-## 🛠️ Công Nghệ
+## 🛠️ Công Nghệ Sử Dụng
 
 <div align="center">
 
@@ -301,7 +339,7 @@ CV của bạn → [AI Embedding] → Vector 768 chiều
 **🤖 Gemini 2.5 Flash** (`gemini-2.5-flash`)
 - ✅ Parse CV từ PDF → JSON
 - ✅ Phân tích chất lượng CV
-- ✅ Ranking jobs (score 0-1)
+- ✅ Ranking jobs (score 0-100%)
 - ✅ Giải thích "Tại sao phù hợp"
 - ✅ Phân tích biểu đồ dashboard
 
@@ -596,16 +634,17 @@ Truy cập [http://localhost:9990/docs](http://localhost:9990/docs) để xem AP
 - [ ] 🔐 **Authentication** - Login/Register với JWT
 - [ ] 💬 **Chatbot Tư Vấn** - AI chatbot tư vấn nghề nghiệp
 - [ ] 🎯 **Recommendation System** - Gợi ý jobs dựa trên lịch sử
+- [ ] 📧 **Email Notifications** - Thông báo jobs mới phù hợp
 
 </td>
 <td width="50%">
 
 ### 🚀 Future Plans
 
-- [ ] 📧 **Email Notifications** - Thông báo jobs mới
 - [ ] 📱 **Mobile App** - React Native app
 - [ ] ☁️ **Deploy Cloud** - AWS/GCP deployment
 - [ ] 🌍 **Multi-language** - English support
+- [ ] 📊 **Advanced Analytics** - Salary prediction, career path
 
 </td>
 </tr>
@@ -629,6 +668,12 @@ Truy cập [http://localhost:9990/docs](http://localhost:9990/docs) để xem AP
 5️⃣ Mở Pull Request
 ```
 
+### 💖 Contributors
+
+<a href="https://github.com/Trinhvhao/TalentBridge/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Trinhvhao/TalentBridge" />
+</a>
+
 </div>
 
 ---
@@ -638,6 +683,8 @@ Truy cập [http://localhost:9990/docs](http://localhost:9990/docs) để xem AP
 <div align="center">
 
 Distributed under the **MIT License**. See `LICENSE` for more information.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
 
@@ -652,6 +699,10 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 [![GitHub](https://img.shields.io/badge/GitHub-@Trinhvhao-181717?style=for-the-badge&logo=github)](https://github.com/Trinhvhao)
 [![Email](https://img.shields.io/badge/Email-haotrinh142@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:haotrinh142@gmail.com)
 
+---
+
+### ⭐ Nếu bạn thấy project hữu ích, hãy cho một star nhé!
+
 </div>
 
 ---
@@ -662,16 +713,102 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 <table>
 <tr>
-<td align="center">
+<td align="center" width="33%">
   <a href="https://ai.google.dev/">
-    <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" width="60"/><br/>
+    <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" width="80"/><br/>
     <sub><b>Google Gemini AI</b></sub>
   </a>
+  <br/>
+  <sub>Powerful LLM for CV parsing & analysis</sub>
 </td>
-<td align="center">
+<td align="center" width="33%">
   <a href="https://fastapi.tiangolo.com/">
-    <img src="https://fastapi.tiangolo.com/img/icon-white.svg" width="60"/><br/>
+    <img src="https://fastapi.tiangolo.com/img/icon-white.svg" width="80"/><br/>
     <sub><b>FastAPI</b></sub>
   </a>
+  <br/>
+  <sub>High-performance async web framework</sub>
+</td>
+<td align="center" width="33%">
+  <a href="https://www.trychroma.com/">
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Card%20File%20Box.png" width="80"/><br/>
+    <sub><b>ChromaDB</b></sub>
+  </a>
+  <br/>
+  <sub>Vector database for semantic search</sub>
 </td>
 </tr>
+<tr>
+<td align="center" width="33%">
+  <a href="https://www.langchain.com/">
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Link.png" width="80"/><br/>
+    <sub><b>LangChain</b></sub>
+  </a>
+  <br/>
+  <sub>RAG framework for AI applications</sub>
+</td>
+<td align="center" width="33%">
+  <a href="https://www.topcv.vn/">
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Briefcase.png" width="80"/><br/>
+    <sub><b>TopCV</b></sub>
+  </a>
+  <br/>
+  <sub>Job data source (3,237 jobs)</sub>
+</td>
+<td align="center" width="33%">
+  <a href="https://www.chartjs.org/">
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Chart%20Increasing.png" width="80"/><br/>
+    <sub><b>Chart.js</b></sub>
+  </a>
+  <br/>
+  <sub>Beautiful interactive charts</sub>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+<div align="center">
+
+### 📞 Liên Hệ & Hỗ Trợ
+
+<table>
+<tr>
+<td align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Envelope.png" width="50"/><br/>
+  <strong>Email</strong><br/>
+  <a href="mailto:haotrinh142@gmail.com">haotrinh142@gmail.com</a>
+</td>
+<td align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" width="50"/><br/>
+  <strong>GitHub</strong><br/>
+  <a href="https://github.com/Trinhvhao">@Trinhvhao</a>
+</td>
+<td align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Lady%20Beetle.png" width="50"/><br/>
+  <strong>Report Bug</strong><br/>
+  <a href="https://github.com/Trinhvhao/TalentBridge/issues">Issues</a>
+</td>
+<td align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="50"/><br/>
+  <strong>New Feature</strong><br/>
+  <a href="https://github.com/Trinhvhao/TalentBridge/issues">Request</a>
+</td>
+</tr>
+</table>
+
+---
+
+**Made with ❤️ by Trịnh Văn Hào**
+
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" width="50"/>
+
+**⭐ Star this repo if you find it helpful!**
+
+[![GitHub stars](https://img.shields.io/github/stars/Trinhvhao/TalentBridge?style=social)](https://github.com/Trinhvhao/TalentBridge/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Trinhvhao/TalentBridge?style=social)](https://github.com/Trinhvhao/TalentBridge/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/Trinhvhao/TalentBridge?style=social)](https://github.com/Trinhvhao/TalentBridge/watchers)
+
+</div>
